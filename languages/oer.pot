@@ -1,0 +1,167 @@
+# Copyright (C) 2018 OER
+# This file is distributed under the same license as the OER package.
+msgid ""
+msgstr ""
+"Project-Id-Version: OER 0.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/oer\n"
+"POT-Creation-Date: 2018-05-18 19:47:50+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: lib/Paginator.php:37 lib/Paginator.php:38 lib/Paginator.php:49
+#: lib/Paginator.php:55 lib/Paginator.php:64 lib/Paginator.php:65
+#: lib/Paginator.php:71 lib/Paginator.php:72
+msgid "go to page"
+msgstr ""
+
+#: oer.php:93
+msgid "OER Settings"
+msgstr ""
+
+#: oer.php:93 oer.php:181
+msgid "Open Educational Resources"
+msgstr ""
+
+#: oer.php:140
+msgid "Open Educational Resources sidebar"
+msgstr ""
+
+#: settings.php:8
+msgid "Open Educational Resources Settings"
+msgstr ""
+
+#: settings.php:17
+msgid "Plugin page"
+msgstr ""
+
+#: settings.php:21
+msgid "Filter query"
+msgstr ""
+
+#: settings.php:25
+msgid "AddThis profile ID"
+msgstr ""
+
+#: settings.php:29
+msgid "Google Analytics code"
+msgstr ""
+
+#: settings.php:43
+msgid "Home URL"
+msgstr ""
+
+#: settings.php:48 settings.php:55
+msgid "Page title"
+msgstr ""
+
+#: settings.php:64
+msgid "Display filters"
+msgstr ""
+
+#: settings.php:70
+msgid "Subject"
+msgstr ""
+
+#: settings.php:75
+msgid "Language"
+msgstr ""
+
+#: settings.php:80
+msgid "Year"
+msgstr ""
+
+#: settings.php:89
+msgid "Save changes"
+msgstr ""
+
+#: template/detail.php:35 template/home.php:69
+msgid "Portuguese"
+msgstr ""
+
+#: template/detail.php:36 template/home.php:70
+msgid "Spanish"
+msgstr ""
+
+#: template/detail.php:37 template/home.php:71
+msgid "English"
+msgstr ""
+
+#: template/detail.php:46 template/home.php:76
+msgid "Home"
+msgstr ""
+
+#: template/detail.php:48 template/metadata.php:63
+msgid "Resource"
+msgstr ""
+
+#: template/detail.php:60
+msgid "Share"
+msgstr ""
+
+#: template/detail.php:88
+msgid "Related articles"
+msgstr ""
+
+#: template/home.php:81
+msgid "Search result"
+msgstr ""
+
+#: template/home.php:94
+msgid "Enter one or more words"
+msgstr ""
+
+#: template/home.php:95
+msgid "Search"
+msgstr ""
+
+#: template/home.php:104
+msgid "No results found"
+msgstr ""
+
+#: template/home.php:107
+msgid "Total"
+msgstr ""
+
+#: template/home.php:135
+msgid "Filters"
+msgstr ""
+
+#: template/home.php:145
+msgid "Selected filters"
+msgstr ""
+
+#: template/metadata.php:56
+msgid "Resource (primary link)"
+msgstr ""
+
+#: template/metadata.php:56
+msgid "Resource (alternative link)"
+msgstr ""
+
+#: template-functions.php:71
+msgid "of"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "OER"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/bireme/oer-wp-plugin/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Browse and Search Open Educational Resources of FI-ADMIN"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "BIREME/OPAS/OMS"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://reddes.bvsalud.org/"
+msgstr ""
