@@ -25,6 +25,53 @@ $detail_page = (isset($resource_id) ? true: false);
     </div>
 <?php endif; ?>
 
+<?php if ($resource->description && $detail_page) : ?>
+    <div class="row-fluid">
+        <?php _e('Description','oer'); ?>: <?php echo $resource->description[0]  ?>
+    </div>
+<?php endif; ?>
+
+<?php if ($resource->course_type && $detail_page) : ?>
+    <div class="row-fluid">
+        <?php _e('Course type','oer'); ?>: <strong><?php echo print_lang_value($resource->course_type, $lang) ?></strong>
+    </div>
+<?php endif; ?>
+
+<?php if ($resource->structure && $detail_page) : ?>
+    <div class="row-fluid">
+        <?php _e('Structure','oer'); ?>: <strong><?php echo print_lang_value($resource->structure, $lang) ?></strong>
+    </div>
+<?php endif; ?>
+
+<?php if ($resource->tec_resource_type && $detail_page) : ?>
+    <div class="row-fluid">
+        <?php _e('Technical resource type','oer'); ?>: <strong><?php echo print_lang_value($resource->tec_resource_type, $lang) ?></strong>
+    </div>
+<?php endif; ?>
+
+<?php if ($resource->format && $detail_page) : ?>
+    <div class="row-fluid">
+        <?php _e('Format','oer'); ?>: <strong><?php echo print_lang_value($resource->format, $lang) ?></strong>
+    </div>
+<?php endif; ?>
+
+<?php if ($resource->learning_context && $detail_page) : ?>
+    <div class="row-fluid">
+        <?php _e('Learning context','oer'); ?>: <strong><?php echo print_lang_value($resource->learning_context, $lang) ?></strong>
+    </div>
+<?php endif; ?>
+
+<?php if ($resource->audience && $detail_page) : ?>
+    <div class="row-fluid">
+        <?php _e('Audience','oer'); ?>: <strong><?php echo print_lang_value($resource->audience, $lang) ?></strong>
+    </div>
+<?php endif; ?>
+
+<?php if ($resource->license && $detail_page) : ?>
+    <div class="row-fluid">
+        <?php _e('License','oer'); ?>: <strong><?php echo print_lang_value($resource->license, $lang) ?></strong>
+    </div>
+<?php endif; ?>
 
 <?php if ($resource->descriptor || $resource->keywords ) : ?>
     <div id="conteudo-loop-tags" class="row-fluid margintop10">

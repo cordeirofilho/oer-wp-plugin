@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OER 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/oer\n"
-"POT-Creation-Date: 2018-05-18 19:47:50+00:00\n"
+"POT-Creation-Date: 2018-05-21 20:30:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,78 +67,98 @@ msgid "Subject"
 msgstr ""
 
 #: settings.php:75
-msgid "Language"
+msgid "Type"
 msgstr ""
 
 #: settings.php:80
-msgid "Year"
+msgid "Language"
 msgstr ""
 
 #: settings.php:89
 msgid "Save changes"
 msgstr ""
 
-#: template/detail.php:35 template/home.php:69
-msgid "Portuguese"
-msgstr ""
-
-#: template/detail.php:36 template/home.php:70
-msgid "Spanish"
-msgstr ""
-
-#: template/detail.php:37 template/home.php:71
-msgid "English"
-msgstr ""
-
-#: template/detail.php:46 template/home.php:76
+#: template/detail.php:41 template/home.php:74
 msgid "Home"
 msgstr ""
 
-#: template/detail.php:48 template/metadata.php:63
+#: template/detail.php:43 template/metadata.php:110
 msgid "Resource"
 msgstr ""
 
-#: template/detail.php:60
+#: template/detail.php:55
 msgid "Share"
 msgstr ""
 
-#: template/detail.php:88
+#: template/detail.php:83
 msgid "Related articles"
 msgstr ""
 
-#: template/home.php:81
+#: template/home.php:79
 msgid "Search result"
 msgstr ""
 
-#: template/home.php:94
+#: template/home.php:90
 msgid "Enter one or more words"
 msgstr ""
 
-#: template/home.php:95
+#: template/home.php:91
 msgid "Search"
 msgstr ""
 
-#: template/home.php:104
+#: template/home.php:101
 msgid "No results found"
 msgstr ""
 
-#: template/home.php:107
+#: template/home.php:104
 msgid "Total"
 msgstr ""
 
-#: template/home.php:135
+#: template/home.php:132
 msgid "Filters"
 msgstr ""
 
-#: template/home.php:145
+#: template/home.php:142
 msgid "Selected filters"
 msgstr ""
 
-#: template/metadata.php:56
+#: template/metadata.php:30
+msgid "Description"
+msgstr ""
+
+#: template/metadata.php:36
+msgid "Course type"
+msgstr ""
+
+#: template/metadata.php:42
+msgid "Structure"
+msgstr ""
+
+#: template/metadata.php:48
+msgid "Technical resource type"
+msgstr ""
+
+#: template/metadata.php:54
+msgid "Format"
+msgstr ""
+
+#: template/metadata.php:60
+msgid "Learning context"
+msgstr ""
+
+#: template/metadata.php:66
+msgid "Audience"
+msgstr ""
+
+#: template/metadata.php:72
+msgid "License"
+msgstr ""
+
+#: template/metadata.php:103
 msgid "Resource (primary link)"
 msgstr ""
 
-#: template/metadata.php:56
+#: template/metadata.php:103
 msgid "Resource (alternative link)"
 msgstr ""
 

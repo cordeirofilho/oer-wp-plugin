@@ -70,14 +70,14 @@ function oer_page_admin() {
                                         <?php _e('Subject', 'oer'); ?>
                                     </label>
                                     <br/>
+                                    <label for="available_filter_type">
+                                        <input type="checkbox" name="oer_config[available_filter][]" value="type" id="available_filter_type" <?php echo (!isset($config['available_filter']) ||  in_array('type', $config['available_filter']) ?  " checked='true'" : '') ;?> ></input>
+                                        <?php _e('Type', 'oer'); ?>
+                                    </label>
+                                    <br/>
                                     <label for="available_filter_language">
                                         <input type="checkbox" name="oer_config[available_filter][]" value="language" id="available_filter_language" <?php echo (!isset($config['available_filter']) ||  in_array('language', $config['available_filter']) ?  " checked='true'" : '') ;?> ></input>
                                         <?php _e('Language', 'oer'); ?>
-                                    </label>
-                                    <br/>
-                                    <label for="available_filter_year">
-                                        <input type="checkbox" name="oer_config[available_filter][]" value="year" id="available_filter_year" <?php echo (!isset($config['available_filter']) ||  in_array('year', $config['available_filter']) ?  " checked='true'" : '') ;?> ></input>
-                                        <?php _e('Year', 'oer'); ?>
                                     </label>
                                 </fieldset>
                             </td>

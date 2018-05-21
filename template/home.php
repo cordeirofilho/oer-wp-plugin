@@ -54,7 +54,7 @@ if ($response){
     $legislation_list = $response_json->diaServerResponse[0]->response->docs;
 
     $descriptor_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->descriptor_filter;
-    $act_type_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->act_type;
+    $type_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->type;
     $scope_region_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->scope_region;
     $language_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->language;
     $collection_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->collection;
@@ -204,19 +204,19 @@ $pages->paginate($page_url_params);
                 				</section>
                             <?php endif; ?>
 
-                            <?php if ( in_array('act_type', $oer_config['available_filter']) && $act_type_list ): ?>
+                            <?php if ( in_array('type', $oer_config['available_filter']) && $type_list ): ?>
                                 <section class="row-fluid marginbottom25 widget_categories">
                                     <header class="row-fluid border-bottom marginbottom15">
-                                        <h1 class="h1-header"><?php echo translate_label($oer_texts, 'act_type', 'filter') ?></h1>
+                                        <h1 class="h1-header"><?php echo translate_label($oer_texts, 'type', 'filter') ?></h1>
                                     </header>
                                     <ul>
-                                        <?php foreach ( $act_type_list as $type) { ?>
+                                        <?php foreach ( $type_list as $type) { ?>
                                             <?php
                                                 $filter_link = '?';
                                                 if ($query != ''){
                                                     $filter_link .= 'q=' . $query . '&';
                                                 }
-                                                $filter_link .= 'filter=act_type:"' . $type[0] . '"';
+                                                $filter_link .= 'filter=type:"' . $type[0] . '"';
                                                 if ($user_filter != ''){
                                                     $filter_link .= ' AND ' . $user_filter ;
                                                 }
@@ -224,58 +224,6 @@ $pages->paginate($page_url_params);
                                             <li class="cat-item">
                                                 <a href='<?php echo $filter_link; ?>'><?php print_lang_value($type[0], $site_language)?></a>
                                                 <span class="cat-item-count"><?php echo $type[1] ?></span>
-                                            </li>
-                                        <?php } ?>
-                                    </ul>
-                                </section>
-                            <?php endif; ?>
-
-                            <?php if ( in_array('scope_region', $oer_config['available_filter']) && $scope_region_list ): ?>
-                                <section class="row-fluid marginbottom25 widget_categories">
-                                    <header class="row-fluid border-bottom marginbottom15">
-                                        <h1 class="h1-header"><?php echo translate_label($oer_texts, 'scope_region', 'filter') ?></h1>
-                                    </header>
-                                    <ul>
-                                        <?php foreach ( $scope_region_list as $region) { ?>
-                                            <?php
-                                                $filter_link = '?';
-                                                if ($query != ''){
-                                                    $filter_link .= 'q=' . $query . '&';
-                                                }
-                                                $filter_link .= 'filter=scope_region:"' . $region[0] . '"';
-                                                if ($user_filter != ''){
-                                                    $filter_link .= ' AND ' . $user_filter ;
-                                                }
-                                            ?>
-                                            <li class="cat-item">
-                                                <a href='<?php echo $filter_link; ?>'><?php print_lang_value($region[0], $site_language)?></a>
-                                                <span class="cat-item-count"><?php echo $region[1] ?></span>
-                                            </li>
-                                        <?php } ?>
-                                    </ul>
-                                </section>
-                            <?php endif; ?>
-
-                            <?php if ( in_array('collection', $oer_config['available_filter']) && $collection_list ): ?>
-                                <section class="row-fluid widget_categories">
-                                    <header class="row-fluid border-bottom marginbottom15">
-                                        <h1 class="h1-header"><?php echo translate_label($oer_texts, 'collection', 'filter'); ?></h1>
-                                    </header>
-                                    <ul>
-                                        <?php foreach ( $collection_list as $collection ) { ?>
-                                            <li class="cat-item">
-                                                <?php
-                                                    $filter_link = '?';
-                                                    if ($query != ''){
-                                                        $filter_link .= 'q=' . $query . '&';
-                                                    }
-                                                    $filter_link .= 'filter=collection:"' . $collection[0] . '"';
-                                                    if ($user_filter != ''){
-                                                        $filter_link .= ' AND ' . $user_filter ;
-                                                    }
-                                                ?>
-                                                <a href='<?php echo $filter_link; ?>'><?php print_lang_value($collection[0], $site_language); ?></a>
-                                                <span class="cat-item-count"><?php echo $collection[1]; ?></span>
                                             </li>
                                         <?php } ?>
                                     </ul>
