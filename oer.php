@@ -71,7 +71,7 @@ if(!class_exists('OER_Plugin')) {
             global $oer_texts;
 
 		    // load internal plugin translations
-		    load_plugin_textdomain( 'oer', false,  OER_PLUGIN_DIR . '/languages' );
+		    load_plugin_textdomain('oer', false,  OER_PLUGIN_DIR . '/languages');
             // load plugin translations
             $site_language = strtolower(get_bloginfo('language'));
             $lang = substr($site_language,0,2);
