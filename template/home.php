@@ -51,18 +51,15 @@ if ($response){
     //var_dump($response_json);
     $total = $response_json->diaServerResponse[0]->response->numFound;
     $start = $response_json->diaServerResponse[0]->response->start;
-    $legislation_list = $response_json->diaServerResponse[0]->response->docs;
+    $resource_list = $response_json->diaServerResponse[0]->response->docs;
 
     $descriptor_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->descriptor_filter;
     $type_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->type;
-    $scope_region_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->scope_region;
     $language_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->language;
-    $collection_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->collection;
-    $publication_year = $response_json->diaServerResponse[0]->facet_counts->facet_fields->publication_year;
 }
 
 $page_url_params = real_site_url($oer_plugin_slug) . '?q=' . urlencode($query)  . '&filter=' . urlencode($filter);
-$feed_url = real_site_url($oer_plugin_slug) . 'legislation-feed?q=' . urlencode($query) . '&filter=' . urlencode($user_filter);
+$feed_url = real_site_url($oer_plugin_slug) . 'oer-feed?q=' . urlencode($query) . '&filter=' . urlencode($user_filter);
 
 $pages = new Paginator($total, $start, $count);
 $pages->paginate($page_url_params);
@@ -104,7 +101,7 @@ $pages->paginate($page_url_params);
     					   <h1 class="h1-header"><?php _e('Total','oer'); ?>: <?php echo $total; ?></h1>
         				</header>
         				<div class="row-fluid">
-                            <?php foreach ( $legislation_list as $resource) { ?>
+                            <?php foreach ( $resource_list as $resource) { ?>
         					    <article class="conteudo-loop">
                                     <?php include('metadata.php') ?>
             					</article>
@@ -250,32 +247,6 @@ $pages->paginate($page_url_params);
                                                 ?>
                                                 <a href='<?php echo $filter_link; ?>'><?php print_lang_value($lang[0], $site_language); ?></a>
                                                 <span class="cat-item-count"><?php echo $lang[1]; ?></span>
-                                            </li>
-                                        <?php } ?>
-                                    </ul>
-                                </section>
-                            <?php endif; ?>
-
-                            <?php if (count($publication_year) > 0) :?>
-                                <section class="row-fluid marginbottom25 widget_categories">
-                                    <header class="row-fluid border-bottom marginbottom15">
-                                        <h1 class="h1-header"><?php echo translate_label($oer_texts, 'year', 'filter') ?></h1>
-                                    </header>
-                                    <ul>
-                                        <?php foreach ( $publication_year as $year) { ?>
-                                            <?php
-                                                $filter_link = '?';
-                                                if ($query != ''){
-                                                    $filter_link .= 'q=' . $query . '&';
-                                                }
-                                                $filter_link .= 'filter=publication_year:"' . $year[0] . '"';
-                                                if ($user_filter != ''){
-                                                    $filter_link .= ' AND ' . $user_filter ;
-                                                }
-                                            ?>
-                                            <li class="cat-item">
-                                                <a href='<?php echo $filter_link; ?>'><?php echo $year[0] ?></a>
-                                                <span class="cat-item-count"><?php echo $year[1] ?></span>
                                             </li>
                                         <?php } ?>
                                     </ul>

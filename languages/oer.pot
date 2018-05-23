@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OER 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/oer\n"
-"POT-Creation-Date: 2018-05-21 20:30:10+00:00\n"
+"POT-Creation-Date: 2018-05-23 14:22:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Save changes"
 msgstr ""
 
-#: template/detail.php:41 template/home.php:74
+#: template/detail.php:41 template/home.php:72
 msgid "Home"
 msgstr ""
 
@@ -94,31 +94,31 @@ msgstr ""
 msgid "Related articles"
 msgstr ""
 
-#: template/home.php:79
+#: template/home.php:77
 msgid "Search result"
 msgstr ""
 
-#: template/home.php:90
+#: template/home.php:88
 msgid "Enter one or more words"
 msgstr ""
 
-#: template/home.php:91
+#: template/home.php:89
 msgid "Search"
 msgstr ""
 
-#: template/home.php:101
+#: template/home.php:99
 msgid "No results found"
 msgstr ""
 
-#: template/home.php:104
+#: template/home.php:102
 msgid "Total"
 msgstr ""
 
-#: template/home.php:132
+#: template/home.php:130
 msgid "Filters"
 msgstr ""
 
-#: template/home.php:142
+#: template/home.php:140
 msgid "Selected filters"
 msgstr ""
 
