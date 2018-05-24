@@ -28,9 +28,8 @@ require_once(OER_PLUGIN_PATH . '/template-functions.php');
 if(!class_exists('OER_Plugin')) {
     class OER_Plugin {
 
-        private $plugin_slug = 'rea';
-        private $service_url = 'http://localhost:8000/';
-        #private $service_url = 'http://fi-admin.bvsalud.org/';
+        private $plugin_slug = 'rea';        
+        private $service_url = 'http://fi-admin.bvsalud.org/';
         private $similar_docs_url = 'http://similardocs.bireme.org/SDService';
 
         /**
