@@ -8,6 +8,7 @@ Template Name: Bibliographic record RSS
 global $oer_service_url, $oer_plugin_slug;
 
 $biblio_config = get_option('oer_config');
+$oer_initial_filter = $oer_config['initial_filter'];
 
 $site_language = strtolower(get_bloginfo('language'));
 $lang_dir = substr($site_language,0,2);

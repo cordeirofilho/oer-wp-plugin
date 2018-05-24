@@ -7,7 +7,7 @@ global $oer_service_url, $oer_plugin_slug, $oer_plugin_title, $oer_texts;
 require_once(OER_PLUGIN_PATH . '/lib/Paginator.php');
 
 $oer_config = get_option('oer_config');
-$oer_initial_filter = $leisef_config['initial_filter'];
+$oer_initial_filter = $oer_config['initial_filter'];
 
 $site_language = strtolower(get_bloginfo('language'));
 $lang = substr($site_language,0,2);
