@@ -84,6 +84,7 @@ $detail_page = (isset($resource_id) ? true: false);
                 endforeach;
             }
             if ($resource->keywords){
+                echo $resource->descriptor ? ', ' : '';
                 foreach ( $resource->keywords as $index => $keyword ):
                     echo "<a href='" . real_site_url($oer_plugin_slug) . "?q=keywords:\"" . $keyword . "\"'>" . $keyword . "</a>";
                     echo $index != count($resource->keywords)-1 ? ', ' : '';
