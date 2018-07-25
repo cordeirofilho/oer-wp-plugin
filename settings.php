@@ -86,7 +86,7 @@ function oer_page_admin() {
 
                         <tr valign="top">
                             <th scope="row"><?php _e('Records per page', 'oer'); ?>:</th>
-                            <td><input type="number" name="oer_config[count_page]" value="<?php echo ($config['count_page'] ? $config['count_page'] : 10) ?>" class="small-text" step="1" min="10"></td>
+                            <td><input type="number" name="oer_config[count_page]" value="<?php echo ($config['count_page'] ? $config['count_page'] : 10) ?>" class="small-text" step="1" min="5"></td>
                         </tr>
 
                         <tr valign="top">
