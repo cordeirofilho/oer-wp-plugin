@@ -7,7 +7,7 @@ Template Name: Bibliographic record RSS
 
 global $oer_service_url, $oer_plugin_slug;
 
-$biblio_config = get_option('oer_config');
+$oer_config = get_option('oer_config');
 $oer_initial_filter = $oer_config['initial_filter'];
 
 $site_language = strtolower(get_bloginfo('language'));
@@ -32,8 +32,6 @@ if ($oer_initial_filter != ''){
 $start = ($page * $count) - $count;
 
 $service_request = $oer_service_url . 'api/oer/search/?q=' . urlencode($query) . '&fq=' . urlencode($filter) . '&start=' . $start . '&lang=' . $lang_dir;
-
-//print $biblio_service_request;
 
 $response = @file_get_contents($service_request);
 if ($response){

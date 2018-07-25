@@ -67,7 +67,7 @@ if ($response){
 
 }
 
-$page_url_params = real_site_url($oer_plugin_slug) . '?q=' . urlencode($query)  . '&filter=' . urlencode($filter);
+$page_url_params = real_site_url($oer_plugin_slug) . '?q=' . urlencode($query)  . '&filter=' . urlencode($user_filter);
 $feed_url = real_site_url($oer_plugin_slug) . 'oer-feed?q=' . urlencode($query) . '&filter=' . urlencode($user_filter);
 
 $pages = new Paginator($total, $start, $count);
