@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/oer\n"
-"POT-Creation-Date: 2018-05-23 14:22:07+00:00\n"
-"PO-Revision-Date: 2018-05-23 12:14-0300\n"
+"POT-Creation-Date: 2018-07-25 19:05:28+00:00\n"
+"PO-Revision-Date: 2018-07-25 16:06-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -20,15 +20,15 @@ msgstr ""
 msgid "go to page"
 msgstr "ir para página"
 
-#: oer.php:93
+#: oer.php:92
 msgid "OER Settings"
 msgstr "REA Ajustes"
 
-#: oer.php:93 oer.php:181
+#: oer.php:92 oer.php:180 template/rss.php:50
 msgid "Open Educational Resources"
 msgstr "Recursos Educacionais Abertos"
 
-#: oer.php:140
+#: oer.php:139
 msgid "Open Educational Resources sidebar"
 msgstr "Recursos Educacionais Abertos"
 
@@ -76,15 +76,23 @@ msgstr "Tipo"
 msgid "Language"
 msgstr "Idioma"
 
-#: settings.php:89
+#: settings.php:88
+msgid "Records per page"
+msgstr "Registros por página"
+
+#: settings.php:93
+msgid "Items per filter"
+msgstr "Itens por filtro"
+
+#: settings.php:100
 msgid "Save changes"
 msgstr "Salvar alterações"
 
-#: template/detail.php:41 template/home.php:72
+#: template/detail.php:41 template/home.php:81
 msgid "Home"
 msgstr "Página inicial"
 
-#: template/detail.php:43 template/metadata.php:110
+#: template/detail.php:43 template/metadata.php:111
 msgid "Resource"
 msgstr "Recurso"
 
@@ -96,31 +104,31 @@ msgstr "Compartilhar"
 msgid "Related articles"
 msgstr "Artigos relacionados"
 
-#: template/home.php:77
+#: template/home.php:86
 msgid "Search result"
 msgstr "Resultado da pesquisa"
 
-#: template/home.php:88
+#: template/home.php:97
 msgid "Enter one or more words"
 msgstr "Entre uma ou mais palavras"
 
-#: template/home.php:89
+#: template/home.php:98
 msgid "Search"
 msgstr "Pesquisa"
 
-#: template/home.php:99
+#: template/home.php:108
 msgid "No results found"
 msgstr "Nenhum resultado encontrado"
 
-#: template/home.php:102
+#: template/home.php:111
 msgid "Total"
 msgstr "Total"
 
-#: template/home.php:130
+#: template/home.php:139
 msgid "Filters"
 msgstr "Filtros"
 
-#: template/home.php:140
+#: template/home.php:149
 msgid "Selected filters"
 msgstr "Filtros selecionados"
 
@@ -156,11 +164,11 @@ msgstr "Público"
 msgid "License"
 msgstr "Licença"
 
-#: template/metadata.php:103
+#: template/metadata.php:104
 msgid "Resource (primary link)"
 msgstr "Recurso (link primário)"
 
-#: template/metadata.php:103
+#: template/metadata.php:104
 msgid "Resource (alternative link)"
 msgstr "Recurso (link alternativo)"
 

@@ -8,6 +8,8 @@ require_once(OER_PLUGIN_PATH . '/lib/Paginator.php');
 
 $oer_config = get_option('oer_config');
 $oer_initial_filter = $oer_config['initial_filter'];
+$count_page = intval($oer_config['count_page']);
+$count_filter = intval($oer_config['count_filter']);
 
 $site_language = strtolower(get_bloginfo('language'));
 $lang = substr($site_language,0,2);
@@ -17,7 +19,7 @@ $query = stripslashes($query);
 $user_filter = stripslashes($_GET['filter']);
 $page = ( isset($_GET['page']) ? $_GET['page'] : 1 );
 $total = 0;
-$count = 10;
+$count = ( $count_page > 0 ? $count_page : 10 );
 $filter = '';
 
 if ($oer_initial_filter != ''){
@@ -31,7 +33,7 @@ if ($oer_initial_filter != ''){
 }
 $start = ($page * $count) - $count;
 
-$oer_search = $oer_service_url . 'api/oer/search/?q=' . urlencode($query) . '&fq=' . urlencode($filter) . '&start=' . $start . '&lang=' . $lang;
+$oer_search = $oer_service_url . 'api/oer/search/?q=' . urlencode($query) . '&fq=' . urlencode($filter) . '&start=' . $start . '&lang=' . $lang . '&count=' . $count;
 
 if ( $user_filter != '' ) {
     $user_filter_list = preg_split("/ AND /", $user_filter);
@@ -56,6 +58,13 @@ if ($response){
     $descriptor_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->descriptor_filter;
     $type_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->type;
     $language_list = $response_json->diaServerResponse[0]->facet_counts->facet_fields->language;
+
+    if ($count_filter > 0){
+        $descriptor_list = array_slice($descriptor_list, 0, $count_filter);
+        $type_list = array_slice($type_list, 0, $count_filter);
+        $language_list = array_slice($language_list, 0, $count_filter);
+    }
+
 }
 
 $page_url_params = real_site_url($oer_plugin_slug) . '?q=' . urlencode($query)  . '&filter=' . urlencode($filter);
@@ -66,6 +75,7 @@ $pages->paginate($page_url_params);
 ?>
 
 <?php get_header('oer');?>
+
 		<div class="ajusta2">
             <div class="row-fluid breadcrumb">
                 <a href="<?php echo real_site_url() ?>"><?php _e('Home','oer'); ?></a> >

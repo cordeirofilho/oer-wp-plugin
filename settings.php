@@ -81,6 +81,17 @@ function oer_page_admin() {
                                     </label>
                                 </fieldset>
                             </td>
+
+                        </tr>
+
+                        <tr valign="top">
+                            <th scope="row"><?php _e('Records per page', 'oer'); ?>:</th>
+                            <td><input type="number" name="oer_config[count_page]" value="<?php echo ($config['count_page'] ? $config['count_page'] : 10) ?>" class="small-text" step="1" min="10"></td>
+                        </tr>
+
+                        <tr valign="top">
+                            <th scope="row"><?php _e('Items per filter', 'oer'); ?>:</th>
+                            <td><input type="number" name="oer_config[count_filter]" value="<?php echo ($config['count_filter'] ? $config['count_filter'] : 10) ?>" class="small-text" step="1" min="1"></td>
                         </tr>
 
                     </tbody>
