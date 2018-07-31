@@ -28,7 +28,7 @@ require_once(OER_PLUGIN_PATH . '/template-functions.php');
 if(!class_exists('OER_Plugin')) {
     class OER_Plugin {
 
-        private $plugin_slug = 'rea';        
+        private $plugin_slug = 'rea';
         private $service_url = 'http://fi-admin.bvsalud.org/';
         private $similar_docs_url = 'http://similardocs.bireme.org/SDService';
 
@@ -148,7 +148,7 @@ if(!class_exists('OER_Plugin')) {
 		}
 
 
-        function theme_slug_render_title() {
+        function theme_slug_render_title($title) {
             global $wp, $oer_plugin_title;
             $pagename = '';
 
@@ -166,10 +166,10 @@ if(!class_exists('OER_Plugin')) {
                 }else{
                     $oer_plugin_title = $oer_config['plugin_title'];
                 }
-                $title_parts['title'] = $oer_plugin_title . " | " . get_bloginfo('name');
+                $title['title'] = $oer_plugin_title . " | " . get_bloginfo('name');
             }
 
-            return $title_parts;
+            return $title;
         }
 
 		function page_title(){
