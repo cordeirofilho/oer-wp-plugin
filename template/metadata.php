@@ -96,21 +96,24 @@ $detail_page = (isset($resource_id) ? true: false);
 
 <?php if ( $resource->link ) : ?>
     <div class="row-fluid">
-      <?php if ($alternative_links && count($resource->link) > 10): ?>
-          <?php foreach ($resource->link as $index => $link): ?>
-              <span class="more">
-                  <a href="<?php echo $link ?>" target="_blank">
-                      <i class="fa fa-file" aria-hidden="true"> </i>
-                      <?php ( ($index == 0) ? _e('Resource (primary link)','oer') : _e('Resource (alternative link)','oer')); ?>
-                  </a>
-              </span>&nbsp;&nbsp;&nbsp;
-          <?php endforeach; ?>
-      <?php else: ?>
-          <span class="more">
-              <a href="<?php echo $resource->link[0] ?>" target="_blank">
-                  <i class="fa fa-file" aria-hidden="true"> </i> <?php _e('Resource','oer'); ?>
-              </a>
-          </span>
-      <?php endif; ?>
+      <?php foreach ($resource->link as $url): ?>
+          <?php if (preg_match('/vimeo\.com|youtube\.com|flickr\.com/', $url)) :?>
+              <?php display_thumbnail($url); ?>
+          <?php endif; ?>
+      <?php endforeach; ?>
+    <div>
+    <div class="row-fluid">
+      <?php foreach ($resource->link as $index => $url): ?>
+            <span class="more">
+                <a href="<?php echo $url ?>" target="_blank">
+                    <i class="fa fa-file" aria-hidden="true"> </i> <?php _e('Resource','oer'); ?>
+                    <?php
+                        if (count($resource->link) > 1){
+                            echo __('link','oer') . ' (' . intval($index+1) . ')';
+                        }
+                    ?>
+                </a>
+            </span>&nbsp;&nbsp;&nbsp;
+      <?php endforeach; ?>
     </div>
 <?php endif; ?>

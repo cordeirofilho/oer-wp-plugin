@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OER 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/oer\n"
-"POT-Creation-Date: 2018-07-25 19:05:28+00:00\n"
-"PO-Revision-Date: 2018-07-25 16:07-0300\n"
+"POT-Creation-Date: 2018-07-31 15:56:07+00:00\n"
+"PO-Revision-Date: 2018-07-31 12:57-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "OER Settings"
 msgstr "REA Ajustes"
 
-#: oer.php:92 oer.php:180 template/rss.php:50
+#: oer.php:92 oer.php:180 template/rss.php:48
 msgid "Open Educational Resources"
 msgstr "Recursos Educacionales Abiertos"
 
@@ -93,7 +93,7 @@ msgstr "Guardar cambios"
 msgid "Home"
 msgstr "Página inicial"
 
-#: template/detail.php:43 template/metadata.php:111
+#: template/detail.php:43 template/metadata.php:109
 msgid "Resource"
 msgstr "Recurso"
 
@@ -165,13 +165,9 @@ msgstr "Audiencia"
 msgid "License"
 msgstr "Licencia"
 
-#: template/metadata.php:104
-msgid "Resource (primary link)"
-msgstr "Recurso (enlace principal)"
-
-#: template/metadata.php:104
-msgid "Resource (alternative link)"
-msgstr "Recurso (enlace alternativo)"
+#: template/metadata.php:112
+msgid "link"
+msgstr "enlace"
 
 #: template-functions.php:71
 msgid "of"
@@ -196,3 +192,9 @@ msgstr "BIREME/OPAS/OMS"
 #. Author URI of the plugin/theme
 msgid "http://reddes.bvsalud.org/"
 msgstr ""
+
+#~ msgid "Resource (primary link)"
+#~ msgstr "Recurso (enlace principal)"
+
+#~ msgid "Resource (alternative link)"
+#~ msgstr "Recurso (enlace alternativo)"
