@@ -3,7 +3,7 @@
 Template Name: OER Detail
 */
 
-global $oer_service_url, $oer_plugin_slug, $oer_plugin_title, $oer_texts; $similar_docs_url;
+global $oer_service_url, $oer_plugin_slug, $oer_plugin_title, $oer_texts, $similar_docs_url;
 
 $oer_config = get_option('oer_config');
 $resource_id   = $_GET['id'];
@@ -72,7 +72,6 @@ if ($response){
                 <section class="row-fluid marginbottom25 widget_categories">
                     <header class="row-fluid border-bottom marginbottom15">
                         <h1 class="h1-header"><?php _e('Related articles','oer'); ?>
-                           <?php //var_dump($similar_docs_url); ?>
                         </h1>
                     </header>
                     <ul id="ajax">
@@ -82,8 +81,7 @@ if ($response){
                 
 
 <?php
-    $url = plugins_url('oer-wp-plugin');
-    $url.='/template/similar.php?query='.$similar_query.'&lang='.$lang;
+    $url=OER_PLUGIN_URL.'template/similar.php?query='.$similar_query.'&lang='.$lang;
 ?>
 <script type="text/javascript">
     show_similar("<?php echo $url; ?>");
