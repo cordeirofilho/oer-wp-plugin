@@ -81,34 +81,6 @@ $detail_page = (isset($resource_id) ? true: false);
     </div>
 <?php endif; ?>
 
-<!-- Start MH Area -->
-
-<?php if ($resource->mh): ?>
-    <?php foreach (  $resource->mh as $index => $mh) { ?>
-        <div class="row-fluid">
-            <?php
-                echo "<a href='" . real_site_url($oer_plugin_slug) . "?q=mh:\"" . $mh . "\"'>" . $mh . "</a>";
-                //echo $index != count($resource->mh)-1 ? ', ' : '';
-            ?>
-        </div>
-    <?php } ?>
-<?php endif; ?>
-
-<!-- End MH area -->
-<?php if ($resource->keywords ) : ?>
-    <div id="conteudo-loop-tags" class="row-fluid margintop10">
-        <i class="ico-tags"> </i>
-        <?php
-            if ($resource->keywords){
-                echo $resource->descriptor ? ', ' : '';
-                foreach ( $resource->keywords as $index => $keyword ):
-                    echo "<a href='" . real_site_url($oer_plugin_slug) . "?q=keywords:\"" . $keyword . "\"'>" . ucwords($keyword) . "</a>";
-                    echo $index != count($resource->keywords)-1 ? ', ' : '';
-                endforeach;
-            }
-        ?>
-    </div>
-<?php endif; ?>
 <?php /*if ($resource->descriptor || $resource->keywords ) : ?>
     <div id="conteudo-loop-tags" class="row-fluid margintop10">
         <i class="ico-tags"> </i>
@@ -178,6 +150,36 @@ $detail_page = (isset($resource_id) ? true: false);
             ?>
         </div>
     <?php } ?>
+<?php endif; ?>
+
+
+<!-- Start MH Area -->
+
+<?php if ($resource->mh): ?>
+    <?php foreach (  $resource->mh as $index => $mh) { ?>
+        <div class="row-fluid">
+            <?php
+                echo "<a href='" . real_site_url($oer_plugin_slug) . "?q=mh:\"" . $mh . "\"'>" . $mh . "</a>";
+                //echo $index != count($resource->mh)-1 ? ', ' : '';
+            ?>
+        </div>
+    <?php } ?>
+<?php endif; ?>
+
+<!-- End MH area -->
+<?php if ($resource->keywords ) : ?>
+    <div id="conteudo-loop-tags" class="row-fluid margintop10">
+        <i class="ico-tags"> </i>
+        <?php
+            if ($resource->keywords){
+                echo $resource->descriptor ? ', ' : '';
+                foreach ( $resource->keywords as $index => $keyword ):
+                    echo "<a href='" . real_site_url($oer_plugin_slug) . "?q=keywords:\"" . $keyword . "\"'>" . ucwords($keyword) . "</a>";
+                    echo $index != count($resource->keywords)-1 ? ', ' : '';
+                endforeach;
+            }
+        ?>
+    </div>
 <?php endif; ?>
 
 <!-- Link Resource -->
