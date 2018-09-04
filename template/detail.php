@@ -42,7 +42,6 @@ if ($response){
                 <div class="row-fluid">
                     <article class="conteudo-loop">
                         <?php include('metadata.php') ?>
-
                         <footer class="row-fluid margintop05">
                             <i class="ico-compartilhar"><?php _e('Share','oer'); ?></i>
                             <ul class="conteudo-loop-icons">
@@ -75,10 +74,10 @@ if ($response){
                         </h1>
                     </header>
                     <ul id="ajax">
-                        
+
                     </ul>
                 </section>
-                
+
 
 <?php
     $url=OER_PLUGIN_URL.'template/similar.php?query='.$similar_query.'&lang='.$lang;

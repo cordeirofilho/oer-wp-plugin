@@ -94,6 +94,10 @@ msgstr ""
 msgid "Resource"
 msgstr ""
 
+template/metadata.php:24
+msgid "Objectives"
+msgstr ""
+
 #: template/detail.php:55
 msgid "Share"
 msgstr ""
