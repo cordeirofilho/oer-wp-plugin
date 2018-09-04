@@ -130,29 +130,7 @@ $detail_page = (isset($resource_id) ? true: false);
     </div>
 <?php endif; */?>
 
-<?php if ( $resource->link ) : ?>
-    <div class="row-fluid">
-      <?php foreach ($resource->link as $url): ?>
-          <?php if (preg_match('/vimeo\.com|youtube\.com|flickr\.com/', $url)) :?>
-              <?php display_thumbnail($url); ?>
-          <?php endif; ?>
-      <?php endforeach; ?>
-    <div>
-    <div class="row-fluid">
-      <?php foreach ($resource->link as $index => $url): ?>
-            <span class="more">
-                <a href="<?php echo $url ?>" target="_blank">
-                    <i class="fa fa-file" aria-hidden="true"> </i> <?php _e('Resource','oer'); ?>
-                    <?php
-                        if (count($resource->link) > 1){
-                            echo __('link','oer') . ' (' . intval($index+1) . ')';
-                        }
-                    ?>
-                </a>
-            </span>&nbsp;&nbsp;&nbsp;
-      <?php endforeach; ?>
-    </div>
-<?php endif; ?>
+<!-- Relationship area -->
 
 <?php if ($resource->relationship_active): ?>
     <?php foreach ( $resource->relationship_active as $rel) { ?>
@@ -200,6 +178,31 @@ $detail_page = (isset($resource_id) ? true: false);
             ?>
         </div>
     <?php } ?>
+<?php endif; ?>
+
+<!-- Link Resource -->
+<?php if ( $resource->link ) : ?>
+    <div class="row-fluid">
+      <?php foreach ($resource->link as $url): ?>
+          <?php if (preg_match('/vimeo\.com|youtube\.com|flickr\.com/', $url)) :?>
+              <?php display_thumbnail($url); ?>
+          <?php endif; ?>
+      <?php endforeach; ?>
+    <div>
+    <div class="row-fluid">
+      <?php foreach ($resource->link as $index => $url): ?>
+            <span class="more">
+                <a href="<?php echo $url ?>" target="_blank">
+                    <i class="fa fa-file" aria-hidden="true"> </i> <?php _e('Resource','oer'); ?>
+                    <?php
+                        if (count($resource->link) > 1){
+                            echo __('link','oer') . ' (' . intval($index+1) . ')';
+                        }
+                    ?>
+                </a>
+            </span>&nbsp;&nbsp;&nbsp;
+      <?php endforeach; ?>
+    </div>
 <?php endif; ?>
 
 <div class="row-fluid">
