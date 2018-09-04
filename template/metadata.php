@@ -154,8 +154,55 @@ $detail_page = (isset($resource_id) ? true: false);
     </div>
 <?php endif; ?>
 
+<?php if ($resource->relationship_active): ?>
+    <?php foreach ( $resource->relationship_active as $rel) { ?>
+        <div class="row-fluid">
+            <?php
+                $rel_parts = explode("@", $rel);
+                $rel_relation = $rel_parts[0];
+                $rel_act_title = $rel_parts[1];
+                $rel_act_link = $rel_parts[2];
+            ?>
+            <?php
+                print_lang_value($rel_relation, $lang);
+                echo '&nbsp';
+                if ($rel_act_link != ''){
+                    echo '<a href="' . real_site_url($oer_plugin_slug) . 'resource/?id=' . $rel_act_link . '">';
+                }
+                echo $rel_act_title;
+                if ($rel_act_link != ''){
+                    echo '</a>';
+                }
+            ?>
+        </div>
+    <?php } ?>
+<?php endif; ?>
+
+<?php if ($resource->relationship_passive): ?>
+    <?php foreach ( $resource->relationship_passive as $rel) { ?>
+        <div class="row-fluid">
+            <?php
+                $rel_parts = explode("@", $rel);
+                $rel_relation = $rel_parts[0];
+                $rel_act_title = $rel_parts[1];
+                $rel_act_link = $rel_parts[2];
+            ?>
+            <?php
+                print_lang_value($rel_relation, $lang);
+                echo '&nbsp';
+                if ($rel_act_link != ''){
+                    echo '<a href="' . real_site_url($oer_plugin_slug) . 'resource/?id=' . $rel_act_link . '">';
+                }
+                echo $rel_act_title;
+                if ($rel_act_link != ''){
+                    echo '</a>';
+                }
+            ?>
+        </div>
+    <?php } ?>
+<?php endif; ?>
+
 <div class="row-fluid">
     <span>
-        <?php //var_dump($resource); ?>
     </span>
 </div>
