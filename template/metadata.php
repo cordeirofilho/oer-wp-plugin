@@ -22,7 +22,13 @@ $detail_page = (isset($resource_id) ? true: false);
 <?php if ($resource->learning_objectives ) : ?>
     <div id="conteudo-loop-tags" class="row-fluid margintop10">
         <h2><?php _e('Objectives','oer'); ?>:</h2>
-        <?php echo $resource->learning_objectives[0]  ?>
+        <?php
+        $ob = $resource->learning_objectives[0];
+        $ob_clean = str_replace(array("\\r\\n", "\\t", "\\r", "\\n"), '' , $ob);
+        // mark abstract sections
+        $ob_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<h2>$2</h2>", $ob_clean);
+        echo $ob_mark;
+        ?>
     </div>
 <?php endif; ?>
 
@@ -31,7 +37,7 @@ $detail_page = (isset($resource_id) ? true: false);
         <h2><?php _e('Description','oer'); ?>:</h2>
         <?php
         $ab = $resource->description[0];
-        $ab_clean = str_replace(array("\\r\\n", "\\t", "\\r", "\\n", "pt|", "en|", "es|", "fr|"), '' , $ab);
+        $ab_clean = str_replace(array("\\r\\n", "\\t", "\\r", "\\n"), '' , $ab);
         // mark abstract sections
         $ab_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<h2>$2</h2>", $ab_clean);
         echo $ab_mark;
@@ -172,7 +178,7 @@ $detail_page = (isset($resource_id) ? true: false);
         <i class="ico-tags"> </i>
         <?php
             if ($resource->keywords){
-                echo $resource->descriptor ? ', ' : '';
+                //echo $resource->descriptor ? ', ' : '';
                 foreach ( $resource->keywords as $index => $keyword ):
                     echo "<a href='" . real_site_url($oer_plugin_slug) . "?q=keywords:\"" . $keyword . "\"'>" . ucwords($keyword) . "</a>";
                     echo $index != count($resource->keywords)-1 ? ', ' : '';
