@@ -22,13 +22,13 @@ $detail_page = (isset($resource_id) ? true: false);
 <?php if ($resource->learning_objectives ) : ?>
     <div id="conteudo-loop-tags" class="row-fluid margintop10">
         <?php if ($detail_page) : ?>
-            <h2><?php _e('Objectives','oer'); ?>:</h2>
+            <strong><?php _e('Objectives','oer'); ?>:</strong><br/>
         <?php endif; ?>
         <?php
         $ob = $resource->learning_objectives[0];
         $ob_clean = str_replace(array("\\r\\n", "\\t", "\\r", "\\n"), '' , $ob);
         // mark abstract sections
-        $ob_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<h2>$2</h2>", $ob_clean);
+        $ob_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<strong>$2</strong><br/>", $ob_clean);
         echo $ob_mark;
         ?>
     </div>
@@ -36,12 +36,12 @@ $detail_page = (isset($resource_id) ? true: false);
 
 <?php if ($resource->description && $detail_page) : ?>
     <div class="row-fluid">
-        <h2><?php _e('Description','oer'); ?>:</h2>
+        <strong><?php _e('Description','oer'); ?>:</strong><br/>
         <?php
         $ab = $resource->description[0];
         $ab_clean = str_replace(array("\\r\\n", "\\t", "\\r", "\\n"), '' , $ab);
         // mark abstract sections
-        $ab_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<h2>$2</h2>", $ab_clean);
+        $ab_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<strong>$2</strong><br/>", $ab_clean);
         echo $ab_mark;
         ?>
     </div>
