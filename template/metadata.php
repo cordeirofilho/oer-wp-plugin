@@ -21,12 +21,14 @@ $detail_page = (isset($resource_id) ? true: false);
 
 <?php if ($resource->learning_objectives ) : ?>
     <div id="conteudo-loop-tags" class="row-fluid margintop10">
-        <h2><?php _e('Objectives','oer'); ?>:</h2>
+        <?php if ($detail_page) : ?>
+            <strong><?php _e('Objectives','oer'); ?>:</strong><br/>
+        <?php endif; ?>
         <?php
         $ob = $resource->learning_objectives[0];
         $ob_clean = str_replace(array("\\r\\n", "\\t", "\\r", "\\n"), '' , $ob);
         // mark abstract sections
-        $ob_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<h2>$2</h2>", $ob_clean);
+        $ob_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<strong>$2</strong><br/>", $ob_clean);
         echo $ob_mark;
         ?>
     </div>
@@ -34,14 +36,20 @@ $detail_page = (isset($resource_id) ? true: false);
 
 <?php if ($resource->description && $detail_page) : ?>
     <div class="row-fluid">
-        <h2><?php _e('Description','oer'); ?>:</h2>
+        <strong><?php _e('Description','oer'); ?>:</strong><br/>
         <?php
         $ab = $resource->description[0];
         $ab_clean = str_replace(array("\\r\\n", "\\t", "\\r", "\\n"), '' , $ab);
         // mark abstract sections
-        $ab_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<h2>$2</h2>", $ab_clean);
+        $ab_mark = preg_replace("/(\A|\.)([\w{Lu}\s]+:)/u", "$1<strong>$2</strong><br/>", $ab_clean);
         echo $ab_mark;
         ?>
+    </div>
+<?php endif; ?>
+
+<?php if ($detail_page): ?>
+    <div class="row-fluid">
+        <hr>
     </div>
 <?php endif; ?>
 
@@ -87,7 +95,7 @@ $detail_page = (isset($resource_id) ? true: false);
     </div>
 <?php endif; ?>
 
-<?php /*if ($resource->descriptor || $resource->keywords ) : ?>
+<?php if ($resource->descriptor || $resource->keywords ) : ?>
     <div id="conteudo-loop-tags" class="row-fluid margintop10">
         <i class="ico-tags"> </i>
         <?php
@@ -106,7 +114,7 @@ $detail_page = (isset($resource_id) ? true: false);
             }
         ?>
     </div>
-<?php endif; */?>
+<?php endif; ?>
 
 <!-- Relationship area -->
 
@@ -156,36 +164,6 @@ $detail_page = (isset($resource_id) ? true: false);
             ?>
         </div>
     <?php } ?>
-<?php endif; ?>
-
-
-<!-- Start MH Area -->
-
-<?php if ($resource->mh): ?>
-    <?php foreach (  $resource->mh as $index => $mh) { ?>
-        <div class="row-fluid">
-            <?php
-                echo "<a href='" . real_site_url($oer_plugin_slug) . "?q=mh:\"" . $mh . "\"'>" . $mh . "</a>";
-                //echo $index != count($resource->mh)-1 ? ', ' : '';
-            ?>
-        </div>
-    <?php } ?>
-<?php endif; ?>
-
-<!-- End MH area -->
-<?php if ($resource->keywords ) : ?>
-    <div id="conteudo-loop-tags" class="row-fluid margintop10">
-        <i class="ico-tags"> </i>
-        <?php
-            if ($resource->keywords){
-                //echo $resource->descriptor ? ', ' : '';
-                foreach ( $resource->keywords as $index => $keyword ):
-                    echo "<a href='" . real_site_url($oer_plugin_slug) . "?q=keywords:\"" . $keyword . "\"'>" . ucwords($keyword) . "</a>";
-                    echo $index != count($resource->keywords)-1 ? ', ' : '';
-                endforeach;
-            }
-        ?>
-    </div>
 <?php endif; ?>
 
 <!-- Link Resource -->
