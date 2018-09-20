@@ -58,32 +58,63 @@ function oer_page_admin() {
                         }
 
                         ?>
-
                         <tr valign="top">
-                            <th scope="row">
-                                <?php _e('Display filters', 'oer'); ?>:
-                            </th>
+                            <th scope="row"><?php _e('Sidebar order', 'oer');?>:</th>
+
+                            <?php
+                              if(!isset($config['available_filter'])){
+                                $config['available_filter'] = 'Descriptor;Type;Language';
+                                $order = explode(';', $config['available_filter'] );
+
+                              }else {
+                                $order = explode(';', $config['available_filter'] );
+                            }
+
+                            ?>
+
                             <td>
-                                <fieldset>
-                                    <label for="available_filter_descriptor">
-                                        <input type="checkbox" name="oer_config[available_filter][]" value="descriptor" id="available_filter_descriptor" <?php echo (!isset($config['available_filter']) || in_array('descriptor', $config['available_filter']) ?  " checked='true'" : '') ;?> ></input>
-                                        <?php _e('Subject', 'oer'); ?>
-                                    </label>
-                                    <br/>
-                                    <label for="available_filter_type">
-                                        <input type="checkbox" name="oer_config[available_filter][]" value="type" id="available_filter_type" <?php echo (!isset($config['available_filter']) ||  in_array('type', $config['available_filter']) ?  " checked='true'" : '') ;?> ></input>
-                                        <?php _e('Type', 'oer'); ?>
-                                    </label>
-                                    <br/>
-                                    <label for="available_filter_language">
-                                        <input type="checkbox" name="oer_config[available_filter][]" value="language" id="available_filter_language" <?php echo (!isset($config['available_filter']) ||  in_array('language', $config['available_filter']) ?  " checked='true'" : '') ;?> ></input>
-                                        <?php _e('Language', 'oer'); ?>
-                                    </label>
-                                </fieldset>
+
+
+                              <table border=0>
+                                <tr>
+                                <td >
+                                    <p align="right"><?php _e('Available', 'oer');?><br>
+                                      <ul id="sortable1" class="droptrue">
+                                      <?php
+                                      if(!in_array('Descriptor', $order) && !in_array('Descriptor ', $order) ){
+                                        echo '<li class="ui-state-default" id="Descriptor">'.translate('Descriptor','oer').'</li>';
+                                      }
+                                      if(!in_array('Type', $order) && !in_array('Type ', $order) ){
+                                        echo '<li class="ui-state-default" id="Type">'.translate('Type','oer').'</li>';
+                                      }
+                                      if(!in_array('Language', $order) && !in_array('Language ', $order) ){
+                                        echo '<li class="ui-state-default" id="Language">'.translate('Language','oer').'</li>';
+                                      }
+                                      ?>
+                                      </ul>
+
+                                    </p>
+                                </td>
+
+                                <td >
+                                    <p align="left"><?php _e('Selected', 'oer');?> <br>
+                                      <ul id="sortable2" class="sortable-list">
+                                      <?php
+                                      foreach ($order as $index => $item) {
+                                        $item = trim($item); // Important
+                                        echo '<li class="ui-state-default" id="'.$item.'">'.translate($item ,'oer').'</li>';
+                                      }
+                                      ?>
+                                      </ul>
+                                      <input type="hidden" id="order_aux" name="oer_config[available_filter]" value="<?php echo trim($config['available_filter']); ?> " >
+
+                                    </p>
+                                </td>
+                                </tr>
+                                </table>
+
                             </td>
-
                         </tr>
-
                         <tr valign="top">
                             <th scope="row"><?php _e('Records per page', 'oer'); ?>:</th>
                             <td><input type="number" name="oer_config[count_page]" value="<?php echo ($config['count_page'] ? $config['count_page'] : 10) ?>" class="small-text" step="1" min="5"></td>
@@ -101,6 +132,25 @@ function oer_page_admin() {
                 </p>
             </form>
         </div>
+        <script type="text/javascript">
+            $j( function() {
+              $j( "ul.droptrue" ).sortable({
+                connectWith: "ul"
+              });
+
+              $j('.sortable-list').sortable({
+
+                connectWith: 'ul',
+                update: function(event, ui) {
+                  var changedList = this.id;
+                  var order = $j(this).sortable('toArray');
+                  var positions = order.join(';');
+                  $j('#order_aux').val(positions);
+
+                }
+              });
+            } );
+        </script>
 <?php
 }
 ?>

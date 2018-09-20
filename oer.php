@@ -199,6 +199,8 @@ if(!class_exists('OER_Plugin')) {
 
 		function register_settings(){
 		    register_setting('oer-settings-group', 'oer_config');
+        wp_enqueue_style ('oer' ,  OER_PLUGIN_URL . 'template/css/admin.css');
+        wp_enqueue_script('oer' ,  OER_PLUGIN_URL . 'template/js/jquery-ui.js');
 		}
 
         function settings_link($links) {

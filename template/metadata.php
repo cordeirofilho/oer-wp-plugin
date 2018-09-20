@@ -18,11 +18,10 @@ $detail_page = (isset($resource_id) ? true: false);
         endforeach; ?>
     </div>
 <?php endif; ?>
-
 <?php if ($resource->learning_objectives ) : ?>
-    <div id="conteudo-loop-tags" class="row-fluid margintop10">
+    <div id="conteudo-loop-tags" <?php if($detail_page){echo 'class="destak"'; } else { echo 'class="row-fluid margintop10"'; } ?> > <!--  -->
         <?php if ($detail_page) : ?>
-            <strong><?php _e('Objectives','oer'); ?>:</strong><br/>
+            <h2><?php _e('Objectives','oer'); ?></h2>
         <?php endif; ?>
         <?php
         $ob = $resource->learning_objectives[0];
@@ -33,10 +32,9 @@ $detail_page = (isset($resource_id) ? true: false);
         ?>
     </div>
 <?php endif; ?>
-
 <?php if ($resource->description && $detail_page) : ?>
-    <div class="row-fluid">
-        <strong><?php _e('Description','oer'); ?>:</strong><br/>
+    <div class="destak"> <!-- class="row-fluid" -->
+        <h2><?php _e('Description','oer'); ?></h2>
         <?php
         $ab = $resource->description[0];
         $ab_clean = str_replace(array("\\r\\n", "\\t", "\\r", "\\n"), '' , $ab);
@@ -46,12 +44,9 @@ $detail_page = (isset($resource_id) ? true: false);
         ?>
     </div>
 <?php endif; ?>
-
-<?php if ($detail_page): ?>
-    <div class="row-fluid">
-        <hr>
-    </div>
-<?php endif; ?>
+<?php if ($resource && $detail_page) : ?>
+  <div class="destak">
+    <h2><?php _e('Details', 'oer'); ?></h2>
 
 <?php if ($resource->course_type && $detail_page) : ?>
     <div class="row-fluid">
@@ -94,8 +89,11 @@ $detail_page = (isset($resource_id) ? true: false);
         <?php _e('License','oer'); ?>: <strong><?php echo print_lang_value($resource->license, $lang) ?></strong>
     </div>
 <?php endif; ?>
+</div>
 
 <?php if ($resource->descriptor || $resource->keywords ) : ?>
+  <div class="destak">
+    <h2><?php _e('Descriptors', 'oer'); ?> </h2>
     <div id="conteudo-loop-tags" class="row-fluid margintop10">
         <i class="ico-tags"> </i>
         <?php
@@ -114,11 +112,18 @@ $detail_page = (isset($resource_id) ? true: false);
             }
         ?>
     </div>
+  </div>
 <?php endif; ?>
+
+<?php endif; ?>
+
+
 
 <!-- Relationship area -->
 
 <?php if ($resource->relationship_active): ?>
+  <div class="destak">
+    <h2><?php _e('Related','oer'); ?></h2>
     <?php foreach ( $resource->relationship_active as $rel) { ?>
         <div class="row-fluid">
             <?php
@@ -140,9 +145,12 @@ $detail_page = (isset($resource_id) ? true: false);
             ?>
         </div>
     <?php } ?>
+  </div>
 <?php endif; ?>
 
 <?php if ($resource->relationship_passive): ?>
+  <div class="destak">
+    <h2><?php _e('Related', 'oer'); ?></h2>
     <?php foreach ( $resource->relationship_passive as $rel) { ?>
         <div class="row-fluid">
             <?php
@@ -164,11 +172,12 @@ $detail_page = (isset($resource_id) ? true: false);
             ?>
         </div>
     <?php } ?>
+  </div>
 <?php endif; ?>
 
 <!-- Link Resource -->
 <?php if ( $resource->link ) : ?>
-    <div class="row-fluid">
+    <div class="row-fluid video">
       <?php foreach ($resource->link as $url): ?>
           <?php if (preg_match('/vimeo\.com|youtube\.com|flickr\.com/', $url)) :?>
               <?php display_thumbnail($url); ?>
