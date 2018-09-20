@@ -185,7 +185,12 @@ $pages->paginate($page_url_params);
                                 </section>
                             <?php endif; ?>
 
-                            <?php if ( in_array('descriptor', $oer_config['available_filter']) && $descriptor_list ): ?>
+                            <?php
+                              $order = explode(';', $oer_config['available_filter']);
+                              foreach($order as $index=>$content) {
+                            ?>
+
+                            <?php if ( $content == 'Descriptor' ): ?>
                 			    <section class="row-fluid marginbottom25 widget_categories">
                 					<header class="row-fluid border-bottom marginbottom15">
                 						<h1 class="h1-header"><?php echo translate_label($oer_texts, 'descriptor', 'filter') ?></h1>
@@ -211,7 +216,7 @@ $pages->paginate($page_url_params);
                 				</section>
                             <?php endif; ?>
 
-                            <?php if ( in_array('type', $oer_config['available_filter']) && $type_list ): ?>
+                            <?php if ($content == 'Type' ): ?>
                                 <section class="row-fluid marginbottom25 widget_categories">
                                     <header class="row-fluid border-bottom marginbottom15">
                                         <h1 class="h1-header"><?php echo translate_label($oer_texts, 'type', 'filter') ?></h1>
@@ -237,7 +242,7 @@ $pages->paginate($page_url_params);
                                 </section>
                             <?php endif; ?>
 
-                            <?php if ( in_array('language', $oer_config['available_filter']) && $language_list ): ?>
+                            <?php if ( $content == 'Language' ): ?>
                                 <section class="row-fluid widget_categories">
                                     <header class="row-fluid border-bottom marginbottom15">
                                         <h1 class="h1-header"><?php echo translate_label($oer_texts, 'language', 'filter'); ?></h1>
@@ -262,8 +267,10 @@ $pages->paginate($page_url_params);
                                     </ul>
                                 </section>
                             <?php endif; ?>
-
+                        <?php } ?>
                     <?php endif; ?>
+
+
 
                 </aside>
     			<div class="spacer"></div>

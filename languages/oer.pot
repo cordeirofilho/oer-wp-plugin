@@ -86,6 +86,19 @@ msgstr ""
 msgid "Save changes"
 msgstr ""
 
+#: settings.php:81
+msgid "Available"
+msgstr ""
+
+#: settings.php:100
+msgid "Selected"
+msgstr ""
+
+#: settings.php:84
+msgid "Descriptor"
+msgstr ""
+
+
 #: template/detail.php:41 template/home.php:81
 msgid "Home"
 msgstr ""
@@ -168,6 +181,18 @@ msgstr ""
 
 #: template/metadata.php:112
 msgid "link"
+msgstr ""
+
+template/metadata.php:49
+msgid "Details"
+msgstr ""
+
+template/metadata.php:119
+msgid "Related"
+msgstr ""
+
+template/metadata.php:96
+msgid "Descriptors"
 msgstr ""
 
 #: template-functions.php:71

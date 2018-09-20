@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: OER 0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/oer\n"
 "POT-Creation-Date: 2018-07-31 15:56:07+00:00\n"
-"PO-Revision-Date: 2018-09-04 12:32-0300\n"
+"PO-Revision-Date: 2018-09-20 09:31-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -89,6 +89,20 @@ msgstr "Itens por filtro"
 msgid "Save changes"
 msgstr "Guardar cambios"
 
+#: settings.php:81
+msgid "Available"
+msgstr "Disponible"
+
+#: settings.php:100
+msgid "Selected"
+msgstr "Seleccionados"
+
+#: settings.php:84
+#, fuzzy
+#| msgid "Description"
+msgid "Descriptor"
+msgstr "Descripción"
+
 #: template/detail.php:41 template/home.php:81
 msgid "Home"
 msgstr "Página inicial"
@@ -171,6 +185,15 @@ msgstr "Licencia"
 #: template/metadata.php:112
 msgid "link"
 msgstr "enlace"
+
+msgid "Details"
+msgstr "Detalles"
+
+msgid "Related"
+msgstr "Relacionados"
+
+msgid "Descriptors"
+msgstr "Descriptors"
 
 #: template-functions.php:71
 msgid "of"
