@@ -4,11 +4,11 @@ Plugin Name: OER
 Plugin URI: https://github.com/bireme/oer-wp-plugin/
 Description: Browse and Search Open Educational Resources of FI-ADMIN
 Author: BIREME/OPAS/OMS
-Version: 0.2
+Version: 0.3
 Author URI: http://reddes.bvsalud.org/
 */
 
-define('OER_VERSION', '0.2' );
+define('OER_VERSION', '0.3' );
 
 define('OER_SYMBOLIC_LINK', false );
 define('OER_PLUGIN_DIRNAME', 'rea' );

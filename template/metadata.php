@@ -184,7 +184,7 @@ $detail_page = (isset($resource_id) ? true: false);
           <?php endif; ?>
       <?php endforeach; ?>
     <div>
-    <div class="row-fluid">
+    <div class="row-fluid margintop10">
       <?php foreach ($resource->link as $index => $url): ?>
             <span class="more">
                 <a href="<?php echo $url ?>" target="_blank">
